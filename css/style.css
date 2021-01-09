@@ -1,0 +1,193 @@
+
+/*#first-section > button{
+    background-color: gray;
+    color: black;
+    border: 0;
+}*/
+
+
+
+.btn{
+    background-color: rgb(199, 199, 199);
+    color: black;
+    border: 0;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+.success{
+    background-color: green ;
+    border: 1px solid rgb(2, 100, 2) ;
+    color: white ;
+}
+
+.danger{
+    background-color: red;
+    border: 1px solid rgb(139, 2, 2);
+}
+
+.blue-list > li {
+    color: blue;
+}
+
+/*.blue-list > .red-li {
+    color: red;
+}*/
+
+.blue-list > li:first-child {
+    color: yellow;
+}
+
+
+.para{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    /* text-decoration: underline; */
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+.banner{
+    text-align: center;
+    width: calc( 100% - 200px );
+    height: 100vh;
+    background-image: url(../assets/banner.jpg);
+    /* background-size: 100%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.input-group{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.input-group > label {
+    display: block;
+}
+
+.input-group > input {
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+}
+
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid black;
+    margin-top: 15px;
+}
+
+
+th , td{
+    text-align: left;
+    padding: 16px;
+    border-bottom: 1px solid #9E9E9E;
+}
+
+tr:nth-child(even){
+    background-color: rgb(194, 194, 194);
+}
+
+nav{
+    background-color: #03A9F4;
+    height: 40px;
+}
+
+nav > a{
+    text-decoration: none;
+    padding: 5px 15px 5px 15px;
+    color: white;
+    margin-top: 6.5px;
+    display: inline-block;
+}
+
+nav > a:hover {
+    color: orange;
+}
+
+.dropdown-list{
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-list > .content {
+    position: absolute;
+    width: 140px;
+    top: 28px;
+    padding-left: 15px;
+    background-color: #00BCD4;
+    display: none;
+}
+
+.dropdown-list > .content > ul {
+    padding: 0;
+    
+    list-style: none;
+}
+
+.dropdown-list:hover .content{
+    display: block;
+}
+
+.fixed-btn{
+    background-color: #FF5722;
+    color: white;
+    font-size: 50px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    cursor: pointer;
+    box-shadow: 0px 6px 11px 0px grey;
+    transition: bottom 0.3s ease-in-out;
+
+    /* z-index axe des z */
+}
+
+.fixed-btn:hover{
+    /*height: calc( 100vh - 30px );
+    width: calc( 100% - 30px );
+    border-radius: 7px;*/
+    bottom: 20px;
+}
+
+@keyframes example{
+    0% {left: -100%; background-color: green; }
+    50% {left: -100%; background-color: blue; }
+    
+    100%  {left: 0; background-color: red; }
+}
+
+.shape{
+    position: relative;
+    
+    background-color: red;
+    height: 150px;
+    width: 100%;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+}
+
