@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+
+
+.row{
+
+}
+
+.col-6{
+    width: 50%;
+    margin: 0;
+    float: left;
+}
+
+
+
+.col-3{
+    width: 25%;
+    margin: 0;
+    float: left;
+}
+
+
+.col{
+    background-color: brown;
+    color: white;
+}
+
+
+.col-4{
+    width: 33.333333%;
+    margin: 0;
+    float: left;
+}
+
+@media screen and (max-width: 600px){
+    .col{
+        width: 100% !important;
+    }
+}
