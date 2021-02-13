@@ -76,7 +76,7 @@ input2.addEventListener('focus',()=>{
 
  /** moyen  * */
 
-
+/*
  var matieres = [1,20,3,4,50,6,7,80,9,-1];
 
 
@@ -120,6 +120,168 @@ input2.addEventListener('focus',()=>{
 
  console.log(x);
 
+
+ */
+
+
+ var personne = {
+
+    nom : "taher",
+
+    prenom : "chourabi",
+
+    phone : 93863732,
+
+    job : null,
+
+    id : 11223366,
+
+    address : {
+        ville : "tunis",
+        code:2000,
+        street : "somewhere"
+    },
+
+    voitures : [
+        {
+            mark : "ford",
+            matricul : "1212TU1212"
+        },
+        {
+            mark : "RANGEROVER",
+            matricul : "1212TU1212"
+        },
+        
+    ]
+
+ }
+
+
+ var personnes = []
+
+ /** */
+ var indexOfFeildAboutToUpdate;
+ /**/ 
+
+function initPeronnesTable(){
+    var rows = '';
+
+    personnes.map((p)=>{
+       
+       var row =' <tr>';
+          row+='<td>'+ p.id +'</td>';
+          row+='<td>'+ p.nom +'</td>';
+          row+='<td>'+ p.prenom +'</td>';
+          row+='<td> <button  onclick="  initUpdate('+p.num+')  "  >UPDATE</button> <button  onclick="  deleteRow('+p.num+')  "  >DELETE</button> </td>';
+          
+          row +='</tr>';
+   
+          rows+=row;
+   
+    })
+   
+    document.getElementById("tbodyPerssone").innerHTML = rows;
+}
+
+
+
+ var addPersonneButton = document.getElementById("addBtn");
+ var idInput = document.getElementById("id-value");
+ var nomInput = document.getElementById("nom-value");
+ var prenomIput = document.getElementById("prenom-value");
+/** input update */
+ var idInputUpdate = document.getElementById("id-value-update");
+ var nomInputUpdate = document.getElementById("nom-value-update");
+ var prenomIputUpdate = document.getElementById("prenom-value-update");
+
+
+ 
+
+ function testValues(id,nom,prenom){
+
+    if (id == "" ) {
+        return false;
+    }else{
+        if (nom == "") {
+            return false;
+        }else{
+            if (prenom == "") {
+                return false
+            }
+        }
+    }
+
+     return true;
+ }
+ 
+
+
+ addPersonneButton.addEventListener('click',()=>{
+     var vid = idInput.value;
+     var vnom = nomInput.value;
+     var vprenom = prenomIput.value;
+
+
+
+    if (testValues(vid.trim() ,vnom.trim() ,vprenom.trim() )) {
+        var length = personnes.length;
+        length ++;
+        var personne = {
+            nom : vnom.trim(),
+            id:vid.trim(),
+            prenom:vprenom.trim(),
+            num : length
+        }
+   
+   
+        personnes.push(personne);
+        idInput.value=null;
+        nomInput.value="";
+        prenomIput.value="";
+
+        initPeronnesTable();
+
+        console.log(personnes);
+    }else{
+        alert("missing feild !!");
+    }
+
+ })
+
+ function deleteRow(num){
+
+    if (confirm('do your really wanna delete this item ?')) {
+        personnes.splice( (num-1) ,1 )
+        initPeronnesTable();
+        
+    }
+ }
+
+
+ function initUpdate(num){
+    idInputUpdate.value = personnes[num-1].id;
+    nomInputUpdate.value = personnes[num-1].nom;
+    prenomIputUpdate.value = personnes[num-1].prenom;
+
+    indexOfFeildAboutToUpdate = (num-1);
+     
+
+ }
+
+ var updateBtn = document.getElementById("updateBtn");
+
+ updateBtn.addEventListener('click',()=>{
+    var vid = idInputUpdate.value;
+    var vnom = nomInputUpdate.value;
+    var vprenom = prenomIputUpdate.value;
+
+    personnes[indexOfFeildAboutToUpdate].id = vid;
+    personnes[indexOfFeildAboutToUpdate].nom = vnom;
+    personnes[indexOfFeildAboutToUpdate].prenom = vprenom;
+
+    initPeronnesTable();
+     
+ })
 
 
  
