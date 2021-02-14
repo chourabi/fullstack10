@@ -1,1 +1,45 @@
-var _0x1cef=['location','394778iLrrFM','1FpqGbf','auth.html','513504IMRkkR','titre','phone','log','innerHTML','contact-list','931921HJuYdc','session\x20expired','getElementById','2TtNswV','</strong><br><small>+216\x20','</small></p></li>','backgroundColor','contacts','user','1587323ynaWRW','parse','128983kMciCy','2fJDmHf','<li\x20class=\x22list-group-item\x20test\x22><p><strong>','split','style','getItem','370262nFfOYr','757783ChBtfd'];var _0x3c02=function(_0x55a781,_0x4e7fba){_0x55a781=_0x55a781-0xea;var _0x1cef46=_0x1cef[_0x55a781];return _0x1cef46;};var _0x55a14c=_0x3c02;(function(_0x2405c2,_0x15f28d){var _0xf105be=_0x3c02;while(!![]){try{var _0x3b1ab8=-parseInt(_0xf105be(0xf1))*-parseInt(_0xf105be(0xf9))+-parseInt(_0xf105be(0xf3))+parseInt(_0xf105be(0xf0))+parseInt(_0xf105be(0xee))+-parseInt(_0xf105be(0x105))*-parseInt(_0xf105be(0xed))+-parseInt(_0xf105be(0x102))+parseInt(_0xf105be(0xfc))*parseInt(_0xf105be(0x104));if(_0x3b1ab8===_0x15f28d)break;else _0x2405c2['push'](_0x2405c2['shift']());}catch(_0x670867){_0x2405c2['push'](_0x2405c2['shift']());}}}(_0x1cef,0xefc81));function checkSession(){var _0x171d0f=_0x3c02;localStorage[_0x171d0f(0xec)](_0x171d0f(0x101))==null&&(alert(_0x171d0f(0xfa)),window[_0x171d0f(0xef)]=_0x171d0f(0xf2));}checkSession();function initContactList(){var _0x2575f2=_0x3c02,_0x1d0ffc=localStorage[_0x2575f2(0xec)](_0x2575f2(0x100)),_0x5590e8=_0x1d0ffc[_0x2575f2(0xea)]('#'),_0x552797=document[_0x2575f2(0xfb)](_0x2575f2(0xf8)),_0x32f1bd='';_0x5590e8['forEach'](_0x28db04=>{var _0x2bb577=_0x2575f2;const _0x233483=JSON[_0x2bb577(0x103)](_0x28db04);console[_0x2bb577(0xf6)](_0x233483);var _0x6c28b2=_0x2bb577(0x106)+_0x233483[_0x2bb577(0xf4)]+_0x2bb577(0xfd)+_0x233483[_0x2bb577(0xf5)]+_0x2bb577(0xfe);_0x32f1bd+=_0x6c28b2;}),_0x552797[_0x2575f2(0xf7)]=_0x32f1bd;}initContactList();var body=document['getElementById']('my-app-body');body[_0x55a14c(0xeb)][_0x55a14c(0xff)]='black';
+function checkSession(){
+    if (localStorage.getItem('user')==null) {
+        alert("session expired");
+        window.location="auth.html";
+    }
+}
+
+
+checkSession();
+
+
+function initContactList(){
+    var contactTEXTJSON = localStorage.getItem('contacts');
+    var contactsArrayTextJson = contactTEXTJSON.split('#');
+
+    var contactList = document.getElementById("contact-list");
+
+
+
+    var list ="";
+
+    contactsArrayTextJson.forEach( contact => {
+        const parsedContact = JSON.parse(contact);
+
+        console.log(parsedContact);
+
+        var element = '<li class="list-group-item"><p><strong>'+parsedContact.titre+'</strong><br><small>+216 '+ parsedContact.phone +'</small></p></li>';
+
+        list+=element;
+    });
+
+    contactList.innerHTML=list;
+    
+}
+
+
+
+
+initContactList();
+
+
+
+var body = document.getElementById("my-app-body");
+
+body.style.backgroundColor="black";
