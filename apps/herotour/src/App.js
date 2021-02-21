@@ -1,7 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import User from './component/User';
+
 import React from 'react';
+import Contact from './component/Contact';
 
 class App extends React.Component {
 
@@ -9,36 +8,39 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      date : new Date()
+        contact : [
+            { name:"test test" , phone:22558899 },
+            { name:"test test" , phone:22558899 },
+            { name:"test test" , phone:22558899 },
+            { name:"test test" , phone:22558899 },
+            { name:"test test" , phone:22558899 },
+            { name:"test test" , phone:22558899 },
+            
+        ]
     }
+
+
   }
 
 
 
-
-
   render(){
-    const users = [
-      { username:"test test 1" , email:"test@test.test" },
-      { username:"test test 2" , email:"test@test.test" },
-      { username:"test test 3" , email:"test@test.test" },
-      
-    ];
 
-    /**
-     * {
-          users.map((user)=>{
-            return ( <User email={user.email}  username={user.username}   /> );
-          })
-        }
-     */
-  
+
+    var count = 0;
     return (
       <div>
-        <h1>{ this.state.date.toString() }</h1>
-        
-        <button onClick={ ()=>{ this.setState({date: new Date()}) } } >UPDATE DATE</button>
-        
+          
+          <ul>
+            {
+                this.state.contact.map((c)=>{
+                    count++;
+                    return (
+                       <Contact key={count} name={c.name} phone={c.phone} /> 
+                    )
+                })
+            }
+          </ul>
       </div>
   
     );
