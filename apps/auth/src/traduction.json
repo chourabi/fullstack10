@@ -1,0 +1,6 @@
+{
+    "errorMSGLogin":{
+        "fr":"mauvais mot de passe",
+        "en": "wrong username or password"
+    }
+}
