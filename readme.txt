@@ -11,3 +11,9 @@ https://www.postman.com/downloads/
 
 ** link download monfo **
 https://www.mongodb.com/try/download/compass
+
+** install mongo db ( node project )  **
+npm install mongodb
+
+** new Matrial UI **
+https://material-ui.com/ 
