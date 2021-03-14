@@ -10,6 +10,7 @@ import {
 import Home from './Pages/Home';
 import Auth from './Pages/Auth';
 import Signup from './Pages/Signup';
+import AddNewProduit from './Pages/AddNewProduct';
 
 class App extends React.Component{
   constructor(props){
@@ -27,6 +28,8 @@ class App extends React.Component{
           <Route path="/home" component={Home} exact />
           <Route path="/signin" component={Auth} exact />
           <Route path="/signup" component={Signup} exact />
+          <Route path="/product/add" component={AddNewProduit} exact />
+          
             
           
         </Switch>
